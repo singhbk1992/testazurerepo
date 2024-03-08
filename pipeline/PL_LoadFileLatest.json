@@ -1,0 +1,56 @@
+{
+	"name": "PL_LoadFileLatest",
+	"properties": {
+		"activities": [
+			{
+				"name": "Get Metadata1",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "blobmetadata",
+						"type": "DatasetReference"
+					},
+					"fieldList": [
+						"columnCount",
+						"lastModified",
+						"itemName"
+					],
+					"storeSettings": {
+						"type": "AzureBlobStorageReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "DelimitedTextReadSettings"
+					}
+				}
+			},
+			{
+				"name": "Validation1",
+				"type": "Validation",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "customersourcedataset",
+						"type": "DatasetReference"
+					},
+					"timeout": "0.12:00:00",
+					"sleep": 10
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-03-02T15:08:42Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

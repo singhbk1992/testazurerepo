@@ -1,0 +1,9 @@
+{
+	"name": "testbkfactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1ea036e6-436f-4205-9916-dc0c7fee44a7",
+		"tenantId": "3c8b7d18-2656-440f-8a7a-f3a22d11ef9b"
+	}
+}

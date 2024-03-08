@@ -1,0 +1,13 @@
+{
+	"name": "httplinkedservices",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://github.com/rohanyg/Azure-Data-Engineering-Project/tree/main/data",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
