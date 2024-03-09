@@ -15,8 +15,15 @@
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          Country as string,",
+				"          Year as short,",
+				"          Product_Type as string,",
+				"          Sales as short",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     inferDriftedColumnTypes: true,",
 				"     limit: 100,",
 				"     ignoreNoFilesFound: false) ~> source1"
 			]
